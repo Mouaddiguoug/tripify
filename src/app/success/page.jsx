@@ -1,9 +1,12 @@
 "use client"
-import "@lottiefiles/lottie-player";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 function success() {
   const router = useRouter();
+  useEffect(() => {
+    import("@lottiefiles/lottie-player");
+  });
   return (
     <div className='flex flex-col justify-center items-center h-screen'>
       <div className="w-full flex justify-center items-center bg-gradient-to-r from-purple-500 to-pink-500 h-3/6">
