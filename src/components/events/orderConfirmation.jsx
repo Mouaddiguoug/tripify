@@ -97,7 +97,6 @@ function orderConfirmation({ setToggleOrder, toggleOrder, tripTitle, tripPrice, 
                             <div className="bg-gray-700 w-2/6 justify-center items-center flex rounded-xl">
                                 <p className="text-white">{personsNum}</p>
                             </div>
-
                             <div onClick={() => personsNum < 10 && setPersonsNum(personsNum + 1)} className="w-10 bg-white text-black flex justify-center items-center rounded-2xl">
                                 <p>+</p>
                             </div>

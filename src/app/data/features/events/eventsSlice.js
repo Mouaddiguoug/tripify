@@ -7,6 +7,7 @@ import axios from "axios";
 const initialState = {
     loading: false,
     popularEvents: [],
+    privateEvents: [],
     whatsnewEvents: [],
     allEvents: [],
     packs: [],
@@ -18,16 +19,17 @@ const initialState = {
     }
 };
 
-const fetchPopularEventsData = createAsyncThunk(
-    "events/fetchPopularEventsData",
+const fetchPrivate = createAsyncThunk(
+    "events/fetchPrivate",
     async () => {
         const events = await axios.get(
-            "http://13.51.169.120:8000/events/popular",
+            "http://13.48.44.188:8000/events/private",
             {
                 "content-type": "application/json",
             }
         );
-        return events.data.popularPosts;
+
+        return events.data.data;
     }
 );
 
@@ -35,7 +37,7 @@ const fetchAllEvents = createAsyncThunk(
     "events/fetchAllEvents",
     async () => {
         const events = await axios.get(
-            "http://13.51.169.120:8000/events",
+            "http://13.48.44.188:8000/events",
             {
                 "content-type": "application/json",
             }
@@ -48,7 +50,7 @@ const handleBuyApi = createAsyncThunk(
     "events/handleBuy",
     async (data) => {
         const message = await axios.post(
-            "http://13.51.169.120:8000/events/buy",
+            "http://13.48.44.188:8000/events/buy",
             {
                 "content-type": "application/json",
                 data: data
@@ -62,7 +64,7 @@ const handleBuyPackApi = createAsyncThunk(
     "events/handleBuyPack",
     async (data) => {
         const message = await axios.post(
-            "http://13.51.169.120:8000/events/buyPack",
+            "http://13.48.44.188:8000/events/buyPack",
             {
                 "content-type": "application/json",
                 data: data
@@ -76,7 +78,7 @@ const fetchPacks = createAsyncThunk(
     "events/fetchPacks",
     async () => {
         const packs = await axios.get(
-            "http://13.51.169.120:8000/events/packs",
+            "http://13.48.44.188:8000/events/packs",
             {
                 "content-type": "application/json",
             }
@@ -89,17 +91,17 @@ export const eventsSlice = createSlice({
     name: "events",
     initialState,
     extraReducers: (builder) => {
-        builder.addCase(fetchPopularEventsData.pending, (state) => {
+        builder.addCase(fetchPrivate.pending, (state) => {
             state.loading = true;
         });
-        builder.addCase(fetchPopularEventsData.fulfilled, (state, action) => {
+        builder.addCase(fetchPrivate.fulfilled, (state, action) => {
             state.loading = false;
-            state.popularEvents = action.payload;
+            state.privateEvents = action.payload;
             state.error = "";
         });
-        builder.addCase(fetchPopularEventsData.rejected, (state, action) => {
+        builder.addCase(fetchPrivate.rejected, (state, action) => {
             state.loading = false;
-            state.popularEvents = [];
+            state.privateEvents = [];
             state.error = action.error.message;
         });
         builder.addCase(fetchAllEvents.pending, (state) => {
@@ -144,6 +146,6 @@ export const eventsSlice = createSlice({
     },
 });
 
-export { fetchPopularEventsData, fetchAllEvents, fetchPacks, handleBuyApi, handleBuyPackApi };
+export { fetchAllEvents, fetchPrivate, fetchPacks, handleBuyApi, handleBuyPackApi };
 
 export default eventsSlice.reducer;

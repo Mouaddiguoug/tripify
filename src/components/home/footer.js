@@ -2,7 +2,7 @@ import React from 'react'
 
 function footer() {
     return (
-        <div className='w-full mt-44 z-20'>
+        <div className='w-full z-20'>
             <div className='w-full flex py-3 flex-col md:flex-row justify-center items-center gap-10'>
                 <a href='/discover'>Discover</a>
                 <a href='/packs'>Packs</a>

@@ -17,7 +17,7 @@ function navBar() {
   }, [])
 
   return (
-    <div className={`w-full fixed z-50 md:h-auto justify-between backdrop-blur-3xl items-center bg-black/60 p-5 flex-col md:flex-row flex ${isToggled ? "h-screen" : "h-50 md:h-16"} `}>
+    <div className={`w-full fixed z-50 md:h-auto justify-between backdrop-blur-3xl items-center bg-black/60 p-5 flex-col md:flex-row flex ${isToggled ? "h-screen" : "md:h-20"} `}>
       <div className={`md:w-2/6 w-full justify-between ${isToggled ? "flex" : "md:flex hidden"}`}>
         <img className='w-2/6' src="assets/logo.png" onClick={() => router.push("/")} />
         <div className='md:hidden block py-2'>
@@ -37,8 +37,6 @@ function navBar() {
           </div>
           <button className='w-full block md:hidden bg-slate-900 rounded-2xl h-12'>Sign out</button>
         </div> : <div className={`w-full md:w-2/6 items-center justify-end gap-5 flex-col md:flex-row ${isToggled ? "flex" : "md:flex hidden"}`}>
-          <a href='/auth/signup' className='md:w-[25%] w-[90%] text-center rounded-2xl border-2 py-2'>Sign up</a>
-          <a href='/auth/login' className='md:w-[25%] text-center w-[90%] text-centers py-2 bg-gradient-to-l from-[#B14BC6] to-white rounded-2xl'>Login</a>
         </div>
       }
       <div className={`md:hidden justify-between w-full py-2 ${isToggled ? "hidden" : "flex"}`}>

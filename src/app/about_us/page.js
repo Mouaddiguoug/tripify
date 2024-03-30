@@ -1,6 +1,5 @@
 "use client"
 import NavBar from "@/components/home/navBar"
-import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import { Autoplay } from 'swiper/modules';

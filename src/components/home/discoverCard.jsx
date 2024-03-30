@@ -22,7 +22,7 @@ function discoverCard({ events }) {
         <>
             {
                 events.length > 0 ? events.map(trip => {
-                    return <div onClick={() => router.push(pathname + "event" + "?" + createQueryString("title", trip.albumData.title) + "&" + createQueryString("description", trip.albumData.description) + "&" + createQueryString("price", trip.albumData.price) + "&" + createQueryString("startingDate", trip.albumData.startingTime) + "&" + createQueryString("image", `${config.baseUrl}${trip.pictres[0].value}`))} className='flex w-full rounded-2xl gap-5 justify-between h-44 px-5 items-center bg-[#221E4D]/60'>
+                    return <div onClick={() => router.push(pathname + "event" + "?" + createQueryString("title", trip.albumData.title) + "&" + createQueryString("description", trip.albumData.description) + "&" + createQueryString("price", trip.albumData.price) + "&" + createQueryString("endingTime", trip.albumData.endingTime) + "&" + createQueryString("startingTime", trip.albumData.startingTime) + "&" + createQueryString("image1", `${config.baseUrl}${trip.pictres[0].value}`)  + "&" + createQueryString("image2", `${config.baseUrl}${trip.pictres[1].value}`)  + "&" + createQueryString("image3", `${config.baseUrl}${trip.pictres[2].value}`))} className='flex w-full rounded-2xl gap-5 justify-between h-44 px-5 items-center bg-[#221E4D]/60'>
                         <Image src={`${config.baseUrl}${trip.pictres[0].value}`} className='rounded-2xl w-1/6' width={50} height={50} />
                         <div className='w-5/6 flex gap-2 flex-col justify-between items-start'>
                             <h1 className='text-xl text-white text-start w-full'>{trip.albumData.title}</h1>

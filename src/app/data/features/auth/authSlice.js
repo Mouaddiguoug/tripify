@@ -21,10 +21,10 @@ const initialState = {
 };
 
 const register = createAsyncThunk("auth/register", async (user) => {
-    if (!user.firstName || !user.lastName || !user.email || !user.password || !user.phoneNumber)
+    if (!user.firstName || !user.lastName || !user.email || !user.phoneNumber)
     return toast("please provide the needed data");
   const response = await axios.post(
-    "http://13.51.169.120:8000/signup",
+    "http://13.48.44.188:8000/signup",
     {
       "content-type": "application/json",
       data: user,
@@ -36,7 +36,7 @@ const register = createAsyncThunk("auth/register", async (user) => {
 const login = createAsyncThunk("auth/login", async (user) => {
   if (!user.email || !user.password)
     return toast("please provide the needed data");
-  const response = await axios.post("http://13.51.169.120:8000/login", {
+  const response = await axios.post("http://13.48.44.188:8000/login", {
     "content-type": "application/json",
     data: user,
   });

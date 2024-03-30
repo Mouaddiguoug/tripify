@@ -25,12 +25,10 @@ function loginForm() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
         dispatch(login(formData));
     };
 
     useEffect(() => {
-        console.log(success);
         if (success) {
           router.push("/");
         }

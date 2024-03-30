@@ -4,30 +4,27 @@ import Header from "@/components/home/header";
 import StartingNearBy from "@/components/home/startingNearBy";
 import InterestingPlans from "@/components/home/interestingPlans";
 import NavBar from "@/components/home/navBar";
-import { fetchPopularEventsData, fetchAllEvents } from "./data/features/events/eventsSlice";
-import { useEffect, useState } from "react";
+import { fetchAllEvents, fetchPrivate } from "./data/features/events/eventsSlice";
+import { useCallback, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Footer from "@/components/home/footer";
+import PrivateTrips from "@/components/home/privateTrips";
 
 export default function Home() {
-  const dispach = useDispatch();
-  const [popularEventsState, setPopularEventsState] = useState([]);
+  const dispatch = useDispatch();
   const [allEventsState, setAllEventsState] = useState([]);
+  const [privateTripsState, setPrivateTripsState] = useState([]);
 
-  const { popularEvents, allEvents } = useSelector(
+  const { popularEvents, allEvents, privateEvents } = useSelector(
     (state) => state.events
   );
 
   useEffect(() => {
-    dispach(fetchPopularEventsData());
-    dispach(fetchAllEvents());
+    console.log("hello");
+    dispatch(fetchPrivate());
+    dispatch(fetchAllEvents());
   }, []);
 
-  useEffect(() => {
-    if (popularEvents.length > 0) {
-      setPopularEventsState(popularEvents);
-    }
-  }, [popularEvents]);
 
   useEffect(() => {
     if (allEvents.length > 0) {
@@ -35,13 +32,20 @@ export default function Home() {
     }
   }, [allEvents]);
 
+  useEffect(() => {
+    if (privateEvents.length > 0) {
+      setPrivateTripsState(privateEvents);
+      console.log(privateEvents);
+    }
+  }, [privateEvents]);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <NavBar />
       <Header />
-      {popularEventsState.length > 0 ? <StartingNearBy events={popularEventsState} /> : <div></div>}
       {allEventsState.length > 0 ? <InterestingPlans events={allEvents} /> : <div></div>}
-      <h1 className="text-white  px-5 md:pl-20 z-50 font-extrabold text-4xl text-start w-full">What do we offer</h1>
+      {privateTripsState.length > 0 && <PrivateTrips events={privateEvents} />}
+      <h1 className="text-white  px-5 md:pl-20 z-20 font-extrabold text-4xl text-start w-full">What do we offer</h1>
       <div className="flex z-20 gap-y-5 md:flex-row flex-col justify-between items-center w-full px-5 md:px-20 mt-16">
         <div className="flex h-[450px] px-10 py-5 bg-gray-700/50 backdrop-blur-xl gap-5 flex-col items-center justify-center w-full md:w-[31%] rounded-2xl">
           <h1 className="text-white z-50 font-bold text-xl text-start w-full">Expertise and Guidance</h1>
