@@ -23,7 +23,7 @@ const fetchPrivate = createAsyncThunk(
     "events/fetchPrivate",
     async () => {
         const events = await axios.get(
-            "http://13.48.44.188:8000/events/private",
+            "http://16.171.170.173/events/private",
             {
                 "content-type": "application/json",
             }
@@ -37,7 +37,7 @@ const fetchAllEvents = createAsyncThunk(
     "events/fetchAllEvents",
     async () => {
         const events = await axios.get(
-            "http://13.48.44.188:8000/events",
+            "http://16.171.170.173/events",
             {
                 "content-type": "application/json",
             }
@@ -50,7 +50,7 @@ const handleBuyApi = createAsyncThunk(
     "events/handleBuy",
     async (data) => {
         const message = await axios.post(
-            "http://13.48.44.188:8000/events/buy",
+            "http://16.171.170.173/events/buy",
             {
                 "content-type": "application/json",
                 data: data
@@ -64,7 +64,7 @@ const handleBuyPackApi = createAsyncThunk(
     "events/handleBuyPack",
     async (data) => {
         const message = await axios.post(
-            "http://13.48.44.188:8000/events/buyPack",
+            "http://16.171.170.173/events/buyPack",
             {
                 "content-type": "application/json",
                 data: data
@@ -78,7 +78,7 @@ const fetchPacks = createAsyncThunk(
     "events/fetchPacks",
     async () => {
         const packs = await axios.get(
-            "http://13.48.44.188:8000/events/packs",
+            "http://16.171.170.173/events/packs",
             {
                 "content-type": "application/json",
             }
