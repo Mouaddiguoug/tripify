@@ -78,7 +78,7 @@ const fetchPacks = createAsyncThunk(
     "events/fetchPacks",
     async () => {
         const packs = await axios.get(
-            "https://tripify-backend-amkd.onrender.com//events/packs",
+            "https://tripify-backend-amkd.onrender.com/events/packs",
             {
                 "content-type": "application/json",
             }
