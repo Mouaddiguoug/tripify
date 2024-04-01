@@ -60,12 +60,12 @@ function orderConfirmation({ setToggleOrder, toggleOrder, tripTitle, tripPrice, 
     }
     return toggleOrder && (
         <div className='w-screen fixed h-screen bg-black/15 z-50 flex justify-center items-center'>
-            <div className='w-5/6 py-3 md:w-4/6 h-[90%] px-2 md:h-[80%] flex justify-between rounded-2xl flex-col mt-20 items-center bg-white'>
+            <div className='w-5/6 py-3 md:w-4/6 h-[80%] px-2 md:h-[80%] flex justify-between rounded-2xl flex-col mt-20 items-center bg-white'>
                 <div className='w-full flex justify-between items-center' >
                     <h1 className='text-xl pl-2 text-black font-bold'>Order Confirmation</h1>
                     <IoIosClose onClick={() => setToggleOrder(!toggleOrder)} className='text-black' size={50} />
                 </div>
-                <div className="h-5/6 flex flex-col md:flex-row justify-between items-center w-full">
+                <div className="h-5/6 flex flex-col md:flex-row overflow-y-auto justify-between items-center w-full">
                     <div className='md:w-3/6 w-full h-full flex justify-center flex-col items-start'>
                         <p className='text-black text-sm md:text-xl text-center px-20'>Choose your date.</p>
 
