@@ -24,7 +24,7 @@ function interestingPlans({ events }) {
                     pagination={{
                         clickable: true,
                     }}
-                    modules={[Pagination]}
+                    modules={[Pagination, Autoplay]}
                     breakpoints={{
                         200: {
                             slidesPerView: 1,

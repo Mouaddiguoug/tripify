@@ -25,7 +25,7 @@ function privateTrips({ events }) {
                     pagination={{
                         clickable: true,
                     }}
-                    modules={[Pagination]}
+                    modules={[Pagination, Autoplay]}
                     breakpoints={{
                         50: {
                             slidesPerView: 1,
