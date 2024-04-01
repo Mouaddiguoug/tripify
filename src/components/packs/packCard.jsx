@@ -29,10 +29,10 @@ function packCard({ pack }) {
                     tripPrice={pack.packData.price}
                     isPack={true}
                     toggleOrder={toggleOrder} setToggleOrder={setToggleOrder} />
-                <div className='flex w-full flex-col justify-center items-start'>
-                    <div className='w-full flex justify-between items-center'>
-                        <h1 className='text-2xl mb-5 font-bold'>{pack.packData.title}</h1>
-                        <button onClick={() => setToggleOrder(true)} className='w-44 bg-blue-500 rounded-2xl px-2 py-2'>Buy pack for {pack.packData.price}</button>
+                <div className='flex w-full p-5 flex-col justify-center items-start'>
+                    <div className='w-full flex md:flex-row flex-col justify-between items-center'>
+                        <h1 className='text-2xl mb-4 font-bold'>{pack.packData.title}</h1>
+                        <button onClick={() => setToggleOrder(true)} className=' w-full md:w-44 mb-6 bg-blue-500 rounded-2xl px-2 py-2'>Buy pack for {pack.packData.price}</button>
                     </div>
 
                     <div className='flex md:flex-row flex-col justify-start gap-5 items-start'>

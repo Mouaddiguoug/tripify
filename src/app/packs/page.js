@@ -31,13 +31,13 @@ function pages() {
       <img src='assets/color-sharp 2.png' className='absolute w-4/6' />
       <NavBar />
 
-      <div className="flex relative justify-start p-12 items-start gap-10 flex-col">
+      <div className="flex relative justify-start items-start gap-10 flex-col">
 
-        <h1 className="text-4xl mt-14 font-bold w-full text-start">Packs</h1>
+        <h1 className="text-4xl mt-32 pl-5 font-bold w-full text-start">Packs</h1>
         {
           packs.length > 0 ? packs.map(pack => {
             return <PackCard pack={pack} />
-          }) : <div className="w-full flex flex-col gap-7">
+          }) : <div className="w-full flex flex-col p-5 gap-7">
             <Breathing className="w-full rounded-lg" height={100} />
             <Breathing className="w-full rounded-lg" height={100} />
             <Breathing className="w-full rounded-lg" height={100} />
