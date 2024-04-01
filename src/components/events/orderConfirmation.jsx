@@ -102,7 +102,7 @@ function orderConfirmation({ setToggleOrder, toggleOrder, tripTitle, tripPrice, 
                             </div>
                         </div>
                         <p className='text-black text-lg md:text-xl text-center md:px-20'>we'll pick you up from cafe de france jamae l'fna</p>
-                        <img src="assets/map.jpeg" className='md:w-[95%] w-[90%] rounded-2xl h-full' alt="" />
+                        <img src="assets/map.jpeg" className='md:w-[95%] md:block hidden w-[90%] rounded-2xl h-full' alt="" />
                     </div>
 
                 </div>
