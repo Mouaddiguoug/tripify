@@ -60,7 +60,7 @@ function orderConfirmation({ setToggleOrder, toggleOrder, tripTitle, tripPrice, 
     }
     return toggleOrder && (
         <div className='w-screen fixed h-screen bg-black/15 z-50 flex justify-center items-center'>
-            <div className='w-5/6 py-3 md:w-4/6 h-[80%] px-2 md:h-[80%] flex justify-between rounded-2xl flex-col mt-20 items-center bg-white'>
+            <div className='w-5/6 py-3 md:w-4/6 h-[90%] px-2 md:h-[80%] flex justify-between rounded-2xl flex-col mt-20 items-center bg-white'>
                 <div className='w-full flex justify-between items-center' >
                     <h1 className='text-xl pl-2 text-black font-bold'>Order Confirmation</h1>
                     <IoIosClose onClick={() => setToggleOrder(!toggleOrder)} className='text-black' size={50} />
@@ -107,13 +107,13 @@ function orderConfirmation({ setToggleOrder, toggleOrder, tripTitle, tripPrice, 
                             </div>
                         </div>
                         <p className='text-black text-lg md:text-xl text-center md:px-20'>we'll pick you up from cafe de france jamae l'fna</p>
-                        <img src="assets/map.jpeg" className='md:w-[95%] md:block hidden w-[90%] rounded-2xl h-full' alt="" />
+                        <img src="assets/map.jpeg" className='md:w-[95%] w-[90%] rounded-2xl h-full' alt="" />
                     </div>
 
                 </div>
 
                 <div className='w-full mt-3 px-2 flex justify-center md:justify-end items-center'>
-                    <button onClick={() => handleSubmit()} className='md:w-1/6 w-[90%] py-2 rounded-2xl bg-blue-400'>Confirm</button>
+                    <button onClick={() => handleSubmit()} className='md:w-1/6 w-[92%] py-2 rounded-2xl bg-blue-400'>Confirm</button>
                 </div>
             </div>
         </div>
