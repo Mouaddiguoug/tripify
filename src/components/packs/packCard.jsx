@@ -16,7 +16,6 @@ function packCard({ pack }) {
         (name, value) => {
             const params = new URLSearchParams(searchParams.toString())
             params.set(name, value)
-
             return params.toString()
         },
         [searchParams]
@@ -43,7 +42,7 @@ function packCard({ pack }) {
                                 return  <div onClick={() => router.push(pathname + "event" + "?" + createQueryString("title", trip.data.title) + "&" + createQueryString("description", trip.data.description) + "&" + createQueryString("price", trip.data.price) + "&" + createQueryString("endingTime", trip.data.endingTime) + "&" + createQueryString("startingTime", trip.data.startingTime) + "&" + createQueryString("image1", `${config.baseUrl}${trip.pictures[0].value}`)  + "&" + createQueryString("image2", `${config.baseUrl}${trip.pictures[1].value}`)  + "&" + createQueryString("image3", `${config.baseUrl}${trip.pictures[2].value}`))} className='flex md:w-full rounded-2xl gap-5 justify-between h-36 px-5 items-center bg-[#221E4D]/60'>
                                 <Image src={`${config.baseUrl}${trip.pictures[0].value}`} className='w-3/6 rounded-2xl' width={80} height={80} />
                                 <div className='w-5/6 flex gap-3 flex-col justify-between items-start'>
-                                    <h1 className='text-xl text-white text-start w-full'>{trip.data.title}</h1>
+                                    <h1 className='text-xl text-white text-start w-full'>{trip.data.title.split(" ").slice(0, 3).map(word => `${word} `)}...</h1>
                                     <p className='text-start font-extralight'>{trip.data.description.split(" ").slice(0, 4).map(word => `${word} `)}...</p>
                                 </div>
                             </div>
