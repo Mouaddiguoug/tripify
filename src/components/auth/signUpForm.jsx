@@ -31,6 +31,7 @@ const signUpForm = () => {
     };
 
     const onSubmit = (e) => {
+        if(formData.firstName == "" || formData.lastName == "" || formData.email == "" || formData.phoneNumber == "" ) return toast("Please comlete all the required fields to proceed")
         e.preventDefault();
         dispatch(register(formData));
         if (params.get("comingFrom") != null) {
