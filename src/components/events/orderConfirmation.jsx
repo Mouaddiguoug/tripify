@@ -5,6 +5,8 @@ import { useEffect, useState, useCallback } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { handleBuyApi } from "../../app/data/features/events/eventsSlice"
 import { handleBuyPackApi } from "../../app/data/features/events/eventsSlice"
+import moment from 'moment/moment';
+import { toast } from 'react-toastify';
 
 function orderConfirmation({ setToggleOrder, toggleOrder, tripTitle, tripPrice, isPack }) {
     const dispatch = useDispatch();
@@ -31,6 +33,7 @@ function orderConfirmation({ setToggleOrder, toggleOrder, tripTitle, tripPrice, 
     )
 
     const handleSubmit = () => {
+        if( moment(date).isBefore(moment.now())) return toast("this date is not valid")
         if (user) {
             const data = {
                 "name": user.name,
@@ -68,7 +71,9 @@ function orderConfirmation({ setToggleOrder, toggleOrder, tripTitle, tripPrice, 
 
                         <DateCalendar
                             className='w-5/6 h-5/6 text-black'
-                            onChange={(value) => setDate(value.$d)}
+                            onChange={(value) => {
+                                setDate(value.$d)
+                            }}
 
                             slotProps={{
                                 // 1. Change the layout of the month selector.
@@ -91,13 +96,13 @@ function orderConfirmation({ setToggleOrder, toggleOrder, tripTitle, tripPrice, 
                         <p className='text-black text-sm md:text-xl text-center px-20'>Persons.</p>
 
                         <div className="flex self-center justify-between items-center w-2/6">
-                            <div onClick={() => personsNum > 0 && setPersonsNum(personsNum - 1)} className="w-10 bg-white flex text-black justify-center items-center rounded-2xl">
+                            <div onClick={() => personsNum > 0 && setPersonsNum(personsNum - 1)} className="w-10 bg-white flex cursor-pointer text-black justify-center items-center rounded-2xl">
                                 <p>-</p>
                             </div>
                             <div className="bg-gray-700 w-2/6 justify-center items-center flex rounded-xl">
                                 <p className="text-white">{personsNum}</p>
                             </div>
-                            <div onClick={() => personsNum < 10 && setPersonsNum(personsNum + 1)} className="w-10 bg-white text-black flex justify-center items-center rounded-2xl">
+                            <div onClick={() => personsNum < 10 && setPersonsNum(personsNum + 1)} className="w-10 bg-white cursor-pointer text-black flex justify-center items-center rounded-2xl">
                                 <p>+</p>
                             </div>
                         </div>
