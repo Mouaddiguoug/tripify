@@ -64,7 +64,7 @@ const signUpForm = () => {
     return (
         <div className='md:w-[30%] h-screen w-full flex justify-center gap-8 flex-col items-center'>
             <img src='/assets/logo.png' className='w-32' />
-            <h1 className='text-3xl mb-0 font-extrabold'>tart your journey here</h1>
+            <h1 className='text-3xl mb-0 font-extrabold'>Start your journey here</h1>
             <div className='flex justify-between items-center w-5/6 gap-5'>
                 <input onChange={(e) => onchange(e)} name='firstName' type='text' placeholder='First Name' className='rounded-2xl px-4 w-4/6 h-14 bg-[#542155]' />
                 <input onChange={(e) => onchange(e)} name='lastName' type='text' placeholder='Last Name' className='rounded-2xl px-4 w-4/6 h-14 bg-[#542155]' />
