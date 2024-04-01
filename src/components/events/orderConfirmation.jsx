@@ -57,7 +57,7 @@ function orderConfirmation({ setToggleOrder, toggleOrder, tripTitle, tripPrice, 
     }
     return toggleOrder && (
         <div className='w-screen absolute h-screen bg-black/15 z-50 flex justify-center items-center'>
-            <div className='w-5/6 py-3 md:w-4/6 h-[80%] px-2 md:h-[80%] flex justify-between rounded-2xl flex-col items-center bg-white'>
+            <div className='w-5/6 py-3 md:w-4/6 h-[80%] px-2 md:h-[80%] flex justify-between rounded-2xl flex-col mt-20 items-center bg-white'>
                 <div className='w-full flex justify-between items-center' >
                     <h1 className='text-xl pl-2 text-black font-bold'>Order Confirmation</h1>
                     <IoIosClose onClick={() => setToggleOrder(!toggleOrder)} className='text-black' size={50} />

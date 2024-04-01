@@ -28,7 +28,7 @@ function page() {
         tripPrice={searchParams.get("price")}
         toggleOrder={toggleOrder} setToggleOrder={setToggleOrder} />
       <NavBar />
-      <div className="w-full flex relative justify-center flex-col md:flex-row">
+      <div className="w-full  flex relative justify-center flex-col md:flex-row">
         <Swiper
           autoplay={{
             delay: 1500
@@ -39,7 +39,7 @@ function page() {
           modules={[Autoplay]}
           loop
           autoplay
-          className="mySwiper md:w-3/6 w-full"
+          className="mySwiper mt-20 md:mt-0 md:w-3/6 w-full"
         >
           <SwiperSlide>
             <Image src={searchParams.get("image1")} width={2000} height={2000} className="h-3/6 md:h-screen" />
