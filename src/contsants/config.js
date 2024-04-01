@@ -1,5 +1,5 @@
 const config = {
-    baseUrl:"http://13.48.44.188:8000"
+    baseUrl:"https://tripify-backend-amkd.onrender.com"
 }
 
 export default config

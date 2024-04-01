@@ -6,9 +6,8 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: 'http',
-                hostname: '13.48.44.188',
-                port: '8000',
+                protocol: 'https',
+                hostname: 'tripify-backend-amkd.onrender.com',
                 pathname: '**',
             },
         ],

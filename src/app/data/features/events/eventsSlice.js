@@ -23,7 +23,7 @@ const fetchPrivate = createAsyncThunk(
     "events/fetchPrivate",
     async () => {
         const events = await axios.get(
-            "http://16.171.170.173/events/private",
+            "https://tripify-backend-amkd.onrender.com/events/private",
             {
                 "content-type": "application/json",
             }
@@ -37,7 +37,7 @@ const fetchAllEvents = createAsyncThunk(
     "events/fetchAllEvents",
     async () => {
         const events = await axios.get(
-            "http://16.171.170.173/events",
+            "https://tripify-backend-amkd.onrender.com/events",
             {
                 "content-type": "application/json",
             }
@@ -50,7 +50,7 @@ const handleBuyApi = createAsyncThunk(
     "events/handleBuy",
     async (data) => {
         const message = await axios.post(
-            "http://16.171.170.173/events/buy",
+            "https://tripify-backend-amkd.onrender.com/events/buy",
             {
                 "content-type": "application/json",
                 data: data
@@ -64,7 +64,7 @@ const handleBuyPackApi = createAsyncThunk(
     "events/handleBuyPack",
     async (data) => {
         const message = await axios.post(
-            "http://16.171.170.173/events/buyPack",
+            "https://tripify-backend-amkd.onrender.com/events/buyPack",
             {
                 "content-type": "application/json",
                 data: data
@@ -78,7 +78,7 @@ const fetchPacks = createAsyncThunk(
     "events/fetchPacks",
     async () => {
         const packs = await axios.get(
-            "http://16.171.170.173/events/packs",
+            "https://tripify-backend-amkd.onrender.com//events/packs",
             {
                 "content-type": "application/json",
             }
