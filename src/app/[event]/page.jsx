@@ -28,7 +28,7 @@ function page() {
         tripPrice={searchParams.get("price")}
         toggleOrder={toggleOrder} setToggleOrder={setToggleOrder} />
       <NavBar />
-      <div className="w-full  flex relative justify-center flex-col md:flex-row">
+      <div className="w-full bg-black flex relative justify-center flex-col md:flex-row">
         <Swiper
           autoplay={{
             delay: 1500

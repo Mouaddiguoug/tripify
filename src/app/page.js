@@ -40,7 +40,7 @@ export default function Home() {
   }, [privateEvents]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex min-h-screen bg-black flex-col items-center justify-between">
       <NavBar />
       <Header />
       {allEventsState.length > 0 ? <InterestingPlans events={allEvents} /> : <div></div>}

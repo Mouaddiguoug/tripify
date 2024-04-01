@@ -31,7 +31,7 @@ function pages() {
       <img src='assets/color-sharp 2.png' className='absolute w-4/6' />
       <NavBar />
 
-      <div className="flex relative justify-start items-start gap-10 flex-col">
+      <div className="flex relative bg-black justify-start items-start gap-10 flex-col">
 
         <h1 className="text-4xl mt-32 pl-5 font-bold w-full text-start">Packs</h1>
         {
@@ -46,7 +46,7 @@ function pages() {
         }
 
       </div>
-      <div className="mt-64 w-full">
+      <div className="pt-64 bg-black w-full">
         <Footer />
       </div>
     </>

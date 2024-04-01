@@ -28,13 +28,13 @@ function discover() {
     <>
       <NavBar />
       <img src='assets/color-sharp 2.png' className='absolute w-3/6' />
-      <div className="flex relative justify-start p-12 items-center gap-10 flex-col">
+      <div className="flex bg-black relative justify-start px-5 py-12 items-center gap-10 flex-col">
         <h1 className="text-4xl mt-14 font-bold w-full text-start">Discover</h1>
         <Suspense>
         <DiscoverCard events={allEvents} />
         </Suspense>
       </div>
-      <div className="mt-64 w-full">
+      <div className="pt-64 bg-black w-full">
         <Footer />
       </div>
     </>

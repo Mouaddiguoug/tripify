@@ -13,7 +13,7 @@ function page() {
     return (
         <>
             <NavBar />
-            <div className='w-full h-screen relative'>
+            <div className='w-full bg-black h-screen relative'>
                 <div className="w-full flex justify-center items-center relative h-[400px] md:h-[600px]">
                     <img className="w-full absolute" src='assets/about_us.jpg' />
                     <div className="z-20">
@@ -23,7 +23,7 @@ function page() {
                     </div>
 
                 </div>
-                <div className='w-full h-screen gap-10 justify-center md:justify-between flex flex-col-reverse md:flex-row items-center'>
+                <div className='w-full h-screen bg-black gap-10 justify-center md:justify-between flex flex-col-reverse md:flex-row items-center'>
                     <div className='md:w-3/6 w-full flex justify-center items-center'>
                         <img className="w-[85%]" src='assets/about_us_2.jpg' />
                     </div>
@@ -34,7 +34,7 @@ function page() {
                         <a href="/discover" className='bg-white flex justify-center w-28 py-3 text-black rounded-2xl'>Explore</a>
                     </div>
                 </div>
-                <div className="w-full h-4/6 text-center  py-20 md:py-0 justify-between items-center md:flex-row flex-col  flex">
+                <div className="w-full h-4/6 text-center bg-black  py-20 md:py-0 justify-between items-center md:flex-row flex-col  flex">
                     <div className="w-2/6 flex flex-col justify-center items-center">
                         <p className="text-4xl text-white font-bold">20+</p>
                         <p className="text-xl text-white font-extralight">Already done trips</p>
@@ -48,8 +48,8 @@ function page() {
                         <p className=" text-xl text-white font-extralight">Years of experience</p>
                     </div>
                 </div>
-                <h1 className="text-3xl pl-10 font-bold text-white ">What our clients say about us</h1>
-                <div className="md:pl-10 px-9 md:px-0 mt-10">
+                <h1 className="text-3xl pl-10 font-bold bg-black text-white ">What our clients say about us</h1>
+                <div className="md:pl-10 px-9 md:px-0 pt-10 bg-black">
                     <Swiper
                         slidesPerView={4}
                         spaceBetween={30}
