@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import StartingNearByComponent from './startingNearByComponent';
 import config from '@/contsants/config';
-import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import { Autoplay } from 'swiper/modules';
@@ -41,7 +40,6 @@ function startingNearBy({ events }) {
                     >
                         {
                             events?.length > 0 ? events?.map(trip => {
-                                console.log(trip.pictres[0].value);
                                 return <SwiperSlide key={trip.albumData.id} className=''>
                                     <StartingNearByComponent title={trip.albumData.title} image1={`${config.baseUrl}${trip.pictres[0].value}`} image2={`${config.baseUrl}${trip.pictres[1].value}`} image3={`${config.baseUrl}${trip.pictres[2].value}`} description={trip.albumData.description} price={trip.albumData.price} endingTime={trip.albumData.endingTime} startingTime={trip.albumData.startingTime} />
 

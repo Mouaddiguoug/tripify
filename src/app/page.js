@@ -6,6 +6,7 @@ import InterestingPlans from "@/components/home/interestingPlans";
 import NavBar from "@/components/home/navBar";
 import { fetchAllEvents, fetchPrivate } from "./data/features/events/eventsSlice";
 import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import Footer from "@/components/home/footer";
 import PrivateTrips from "@/components/home/privateTrips";
@@ -13,7 +14,9 @@ import PrivateTrips from "@/components/home/privateTrips";
 export default function Home() {
   const dispatch = useDispatch();
   const [allEventsState, setAllEventsState] = useState([]);
+  const [isHelpContainerVisible, setIsHelpContainerVisible] = useState(false);
   const [privateTripsState, setPrivateTripsState] = useState([]);
+  const router = useRouter();
 
   const { popularEvents, allEvents, privateEvents } = useSelector(
     (state) => state.events
@@ -43,6 +46,15 @@ export default function Home() {
     <main className="flex min-h-screen bg-black flex-col items-center justify-between">
       <NavBar />
       <Header />
+      <div className="fixed flex justify-end px-5 z-50 items-center  bottom-0 right-0 w-[90%] md:w-[20%] h-[20%]">
+       {isHelpContainerVisible ? <div className="bg-gray-700 px-2 w-[90%] md:w-[60%] h-[35%] flex justify-center items-center rounded-2xl">
+        <p className="text-white font-semibold">
+          Need Some Help?
+        </p>
+       </div> : <div></div>}
+        <img className="md:w-20 w-20 cursor-pointer" onClick={() => router.push("https://wa.me/0623767086?text=I%20want%20more%20informations%20about%20your%20services")} onMouseOver={() => setIsHelpContainerVisible(true)} onMouseLeave={() => setIsHelpContainerVisible(false)} src="assets/whatsapp_logo.png" />
+
+      </div>
       {allEventsState.length > 0 ? <InterestingPlans events={allEvents} /> : <div></div>}
       {privateTripsState.length > 0 && <PrivateTrips events={privateEvents} />}
       <h1 className="text-white  px-5 md:pl-20 z-20 font-extrabold text-4xl text-start w-full">What do we offer</h1>
