@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-16628744016"
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
           {dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'AW-16628744016');
         </script>
-      </Head>
+      </head>
       <body className={`${inter.className} text-white bg-black`}>
         <Providers>
           <ToastContainer
