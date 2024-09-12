@@ -11,6 +11,16 @@ export const metadata = {
   title: "Tripify",
   description: "Tripify",
 };
+import { GoogleTagManager } from '@next/third-parties/google'
+
+export default function RootLayout({children}: {children: React.ReactNode}) {
+    return (
+        <html lang="en">
+            <body>{children}</body>
+            <GoogleTagManager gtmId="GTM-XYZ" />
+        </html>
+     )
+}
 
 export default function RootLayout({ children }) {
   return (
