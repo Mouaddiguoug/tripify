@@ -4,6 +4,7 @@ import { Providers } from "./data/provider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "@/components/home/footer";
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,14 +36,7 @@ export default function RootLayout({ children }) {
           {children}
         </Providers>
       </body>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16628744016"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16628744016');
-</script>
+ <GoogleTagManager gtmId="GTM-XYZ" />
     </html>
   );
 }
